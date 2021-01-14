@@ -1,0 +1,131 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>calculater</title>
+<style type="text/css">
+*{
+	padding:0;
+	margin:1px;
+	}
+#calculater{
+	margin:auto;
+	margin-top:20px;
+	border:solid 6px green;
+	border-spacing:10px 10px;
+	padding:5px 10px;
+	}
+#display{
+	width:100%;
+	height:30px;
+	border-bottom:solid 4px white;
+	font-size:18px;
+	color:#193;
+	padding-left:2px;
+	}
+.numberkey{
+	cursor:pointer;
+	width:40px;
+	height:30px;
+	border:solid 5px #fe;
+	color:black;
+	text-align:center;
+	}
+#quality{
+	cursor:pointer;
+	width:40px;
+	height:100%;
+	border:solid 5px #fe;
+	color:black;
+	text-align:center;
+	}
+.numberkey:hover{
+	background:#EA6F30;
+	}
+#quality:hover{
+	background:#EA6F30;
+	}
+
+</style>
+</head>
+<body>
+	<table id="calculater" onClick="calculater()">
+    	<tr>
+        	<td id="display" colspan="5">0</td>
+        </tr>
+        <tr>
+        	<td class="numberkey">1</td>
+            <td class="numberkey">2</td>
+            <td class="numberkey">3</td>
+            <td class="numberkey">+</td>
+            <td class="numberkey" id=multiply onClick="mul()">C</td>
+        </tr>
+         <tr>
+            <td class="numberkey">4</td>
+            <td class="numberkey">5</td>
+            <td class="numberkey">6</td>
+            <td class="numberkey">-</td>
+            <td class="numberkey" rowspan="3" id="equality" onClick="resultcalculate()">=</td>
+        </tr>
+		 <tr>
+            <td class="numberkey">7</td>
+            <td class="numberkey">8</td>
+            <td class="numberkey">9</td>
+            <td class="numberkey">*</td>
+        </tr>
+        <tr>
+            <td class="numberkey">00</td>
+            <td class="numberkey">0</td>
+            <td class="numberkey">.</td>
+            <td class="numberkey">/</td>
+        </tr>
+
+
+    </table>
+<script>
+	var results="";
+	var calresults="";
+	//
+	function calculater(){
+		var curValue = event.srcElement.innerText;
+		if (curValue == "=" || curValue == "C"){
+			return;
+			}
+			//results=results+event.srcElement.innerText;
+		results += event.srcElement.innerText;
+		display.innerText = results;
+		}
+		//2-1
+		//点击=计算结果
+	function resultcalculate() {
+		//计算results结果
+           // calresults = eval(results);
+            if (results == "") {
+                calresults = "0";
+            }else
+			{
+				calresults = eval(results);
+				display.innerText = calresults;
+				}
+            display.innerText = calresults;
+        }
+		//
+	function del() {
+ 
+            results = "";
+            display.innerText = "0";
+ 
+        }
+		//点击C进行清零操作
+		function mul() {
+ 
+            results = "";
+            display.innerText = "0";
+ 
+        }
+
+
+
+</script>
+</body>
+</html>
