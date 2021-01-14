@@ -1,0 +1,101 @@
+<html>
+
+<head>
+</head>
+
+<body>
+    <button id="one" onclick="numberAction(1)">1</button>
+    <button id="2" onclick="numberAction(2)">2</button>
+    <button id="3" onclick="numberAction(3)">3</button>
+    <button id="4" onclick="numberAction(4)">4</button>
+    <button id="5" onclick="numberAction(5)">5</button>
+    <button id="5" onclick="numberAction(6)">6</button>
+    <button id="5" onclick="numberAction(7)">7</button>
+    <button id="5" onclick="numberAction(8)">8</button>
+    <button id="+" onclick="addAction()">+</button>
+    <button id="/" onclick="division()">/</button>
+    <button id="*" onclick="mutiply()">*</button>
+    <button id="-" onclick="subtraction()">-</button>
+    <h1 id="result" onClick="resultAction()">结果</h1>
+    <script>
+        var oneNumber;//记录第一次点击的值
+        var twoNumber;//记录第二次点击的值
+        var type;//加还是乘法
+        var result;//结果
+        var oneortwo = 0;//一个值和另一个值
+        //函数结果
+        function numberAction(e) {
+            oneortwo++;
+            console.log(e);
+            if (oneortwo == 1) {
+                oneNumber = e
+
+            } else if (oneortwo == 2) {
+                twoNumber = e
+                oneortwo = 0;
+            }
+            else if(oneortwo ==3){
+                oneNumber=e
+
+            }
+
+
+        }
+        //函数加法
+        function addAction() {
+            type = 0;
+            console.log(type)
+            // console.log("结果=" + result)
+            // console.log("2结果=" + result)
+            // document.getElementById("result").innerHTML = "结果" + result
+        }
+
+        //函数结果
+        function resultAction() {
+
+            if (type == 0) {
+                result = (oneNumber + twoNumber)
+            }
+            else if (type == 1) {
+                result = (oneNumber * twoNumber)
+            }
+            else if(type ==2){
+                result = (oneNumber/twoNumber)
+            }
+            else if(type==3){
+                result =(oneNumber-twoNumber)
+            }
+            console.log("结果=" + result)
+            document.getElementById("result").innerHTML = "结果" + result
+        }
+        //函数除法
+        function division(){
+            type=2;
+            console.log(type)
+
+        }
+        //函数减法
+        function subtraction(){
+            type=3
+            jian=(3,3)
+        }
+        function jian(a,b){
+            console.log(a-b)
+        }
+
+
+        //函数乘法
+        function mutiply() {
+            type = 1
+            cheng(2, 3)
+        }
+
+        function cheng(a, b) {
+            // result = a*b
+            console.log(a * b)
+            document.getElementById("result").innerHTML = "结果" + a * b
+            // document.getElementById("result").innerHTML = "结果" + result
+        }
+    </script>
+</body>
+<html>
